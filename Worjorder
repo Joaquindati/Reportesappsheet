@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=IBM Plex Sans"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"/>
+
+    <title>Work Order</title>
+
+    <style>
+        h3 {
+            font-family: "Plus Jakarta Sans";
+            margin: 0;
+            text-decoration: underline;
+        }
+        h4 {
+            font-family: "IBM Plex Sans";
+            margin: 0;
+            text-decoration: underline;
+        }
+        h5{
+            font-family: "IBM Plex Sans";
+            margin: 0;
+            margin-top: 3px;
+        }
+
+        p {
+            font-family: "IBM Plex Sans";
+            margin: 0;
+            font-size: 10px;
+            overflow: hidden;
+        }
+
+        .body{
+            margin:0;
+            padding: 24px;
+            max-width: 545px;
+        }
+        .header{
+            height: auto;
+            width: 100%;
+            margin-top: 38px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .header__logo{
+            height: 101px;
+            width: 232px;
+        }
+        .header__logo--img{
+            height: 100%;
+            width: 100%;
+        }
+
+        .header__data{
+            height: auto;
+            width: 232px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header__data--title{
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .header__data--subtitle{
+            height: 64px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .main{
+            
+        }
+        .main__data{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main__data--box1{
+            background-color: #DDDDDD;
+            min-height: 100px;
+            width: 255px;
+            border-radius: 4px;
+            padding: 8px;
+        }
+        .main__data--box2{
+            background-color:  #DDDDDD;
+            min-height: 100px;
+            width: 255px;
+            border-radius: 4px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: right;
+        }
+        .main__jobdescription{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__jobdescription--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__jobdescription--box{
+            background-color:  #DDDDDD;
+            height: auto;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__workperformed{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__workperformed--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__workperformed--box{
+            background-color:  #DDDDDD;
+            height: auto;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main__laborhours{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__laborhours--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__laborhours--container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__laborhours--box1{
+            background-color:  #DDDDDD;
+            height: auto;
+            width: 90px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__laborhours--box2{
+            background-color:  #DDDDDD;
+            height: auto;
+            width: 90px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__laborhours--box3{
+            background-color:  #DDDDDD;
+            height: auto;
+            width: 90px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__laborhours--box4{
+            background-color:  #DDDDDD;
+            height: auto;
+            width: 90px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__laborhours--box5{
+            background-color:  #DDDDDD;
+            height: auto;
+            width: 90px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__materials{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__materials--container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__materials--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .main__materials--box1{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__materials--box2{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__materials--box3{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__refrigerants{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__refrigerants--container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__refrigerants--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__refrigerants--box1{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__refrigerants--box2{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__refrigerants--box3{
+            background-color:  #DDDDDD;
+            height: auto;
+            min-height: 30px;
+            width: 163px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__recommendations{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__recommendations--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__recommendations--container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__recommendations--box1{
+            background-color:  #DDDDDD;
+            width: 255px;
+            height: auto;
+            min-height: 30px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__recommendations--box2{
+            background-color:  #DDDDDD;
+            width: 255px;
+            height: auto;
+            min-height: 30px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__customersignature{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__customersignature--container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__customersignature--title{
+            height: auto;
+            border-radius: 4px;
+        }
+        .main__customersignature--box1{
+            background-color: #DDDDDD;
+            width: 255px;
+            height: auto;
+            min-height: 92px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__customersignature--box2{
+            background-color: #DDDDDD;
+            width: 255px;
+            height: auto;
+            min-height: 92px;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__imagessection{
+            height: auto;
+            width: 100%;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .main__imagessection--row1{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__imagessection--row2{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main__imagessection--img1{
+            max-width: 269px;
+            max-height: 200px;
+            border-radius: 4px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__imagessection--img2{
+            max-width: 269px;
+            max-height: 200px;
+            border-radius: 4px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__imagessection--img3{
+            max-width: 269px;
+            max-height: 200px;
+            border-radius: 4px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .main__imagessection--img4{
+            max-width: 269px;
+            max-height: 200px;
+            border-radius: 4px;
+            margin-top: 4px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer{
+            height: auto;
+            width: 100%;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .footer__title{
+            color: #1A61AE;
+            height: auto;
+            border-radius: 4px;
+            justify-content: center;
+            text-align: center;
+        }
+        .footer__subtitle{
+            color: #1A61AE;
+            height: auto;
+            border-radius: 4px;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__logo">
+            <!--Modificar src para producción-->
+            <img class="header__logo--img" src="../Generada/images/image1.png" alt="">
+        </div>
+        <div class="header__data">
+            <div class="header__data--title">
+                <h3>Work Order</h3>
+            </div>
+            <div class="header__data--subtitle">
+                <p>Date of service:&lt;&lt;[assigned_date]&gt;&gt;</p> <br>
+                <p>Visit Number: <strong> &lt;&lt;[visit_number]&gt;&gt;</strong></p>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="main__data">
+            <div class="main__data--box1">
+                <p>
+                    Customer:  &lt;&lt;[job_id].[customer_id].[customer_name]&gt;&gt;<br>
+                    Site:  &lt;&lt;[job_id].[site_id].[site_name]&gt;&gt;<br>
+                    Address:  &lt;&lt;[job_id].[site_id].[site_address]&gt;&gt;
+                </p>
+            </div>
+            <div class="main__data--box2">
+                <p>
+                    Department:  &lt;&lt;[job_id].[job_department]&gt;&gt;<br>
+                    Job Type:  &lt;&lt;[job_id].[job_type]&gt;&gt;<br>
+                    Visit Billable: &lt;&lt;[visit_billable]&gt;&gt;
+                </p>
+                <p>
+                    Technician:  &lt;&lt;[user].[user_name]&gt;&gt; <br>
+                <strong> Visit Status:  &lt;&lt;[visit_status]&gt;&gt; </strong>
+                </p>
+            </div>
+        </section>
+
+        <section class="main__jobdescription">
+            <div class="main__jobdescription--title">
+                <h4>Job Description:</h4>
+            </div>
+            <div class="main__jobdescription--box">
+                <p> <strong> &lt;&lt;[job_id].[job_title]&gt;&gt; </strong></p>
+            </div>
+        </section>
+
+        <section class="main__workperformed">
+            <div class="main__workperformed--title">
+                <h4>Work Performed</h4>
+            </div>
+            <div class="main__workperformed--box">
+                <p>&lt;&lt;[visit_description]&gt;&gt;</p>
+            </div>
+        </section>
+
+        <section class="main__laborhours">
+            <div class="main__laborhours--title">
+                <h4>Labor Hours:</h4>
+            </div>
+            <div class="main__laborhours--container">
+                <div class="main__laborhours--box1">
+                    <p>
+                        REG:
+                        &lt;&lt;[labor_type_reg]&gt;&gt;
+                        </p>
+                </div>
+                <div class="main__laborhours--box2">
+                    <p>
+                        OT:
+                        &lt;&lt;[labor_type_ot]&gt;&gt;
+                    </p>
+                </div>
+                <div class="main__laborhours--box3">
+                    <p>
+                        DT:
+                        &lt;&lt;[labor_type_dt]&gt;&gt;
+                    </p>
+                </div>
+                <div class="main__laborhours--box4">
+                    <p>
+                        TRVL:
+                        &lt;&lt;[labor_type_travel]&gt;&gt;
+                    </p>
+                </div>
+                <div class="main__laborhours--box5">
+                    <p>
+                        NIGHT:
+                        &lt;&lt;[labor_type_night_shift]&gt;&gt;
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="main__materials">
+            <div class="main__materials--container">
+                <div class="main__materials--title">
+                    <h4>Materials:</h4>
+                </div>
+                <div class="main__materials--box1">
+                    <p>&lt;&lt;Start: [Related Materials]&gt;&gt;&lt;&lt;[material_used]&gt;&gt;</p>
+                </div>
+                
+            </div>
+            <div class="main__materials--container">
+                <div class="main__materials--title">
+                    <h5>Material PO:</h5>
+                </div>
+                <div class="main__materials--box2">
+                    <p>&lt;&lt;[material_po]&gt;&gt;</p>
+                </div>
+            </div>
+            <div class="main__materials--container">
+                <div class="main__materials--title">
+                    <h5>Bottle Serial:</h5>
+                </div>
+                <div class="main__materials--box3">
+                    <p>&lt;&lt;[material_number]&gt;&gt;&lt;&lt;End&gt;&gt;</p>
+                </div>
+            </div>
+           
+            
+            
+        </section>
+
+        <section class="main__refrigerants">
+            <div class="main__refrigerants--container">
+                <div class="main__refrigerants--title">
+                    <h4>Refrigerants:</h4>
+                </div>
+                <div class="main__refrigerants--box1">
+                    <!-- <p><<Start: SELECT(Material[material_id], (AND([visit_id] = [_THISROW].[visit_id], [material_type] = "Refrigerant")))>><<[refrigerant_used].[refrigerant_type]>></p> -->
+                </div>
+                
+            </div>
+            <div class="main__refrigerants--container">
+                <div class="main__refrigerants--title">
+                    <h5>Quantity Used:</h5>
+                </div>
+                <div class="main__refrigerants--box2">
+                    <!-- <p><<[material_weight]>></p> -->
+                </div>
+            </div>
+            <div class="main__refrigerants--container">
+                <div class="main__refrigerants--title">
+                    <h5>Bottle Serial:</h5>
+                </div>
+                <div class="main__refrigerants--box3">
+                    <!-- <p><<[refrigerant_used].[bottle_serial]>><<End>></p> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="main__recommendations">
+            <div class="main__recommendations--title">
+                <h5>Recommendations:</h5>
+            </div>
+            <div class="main__recommendations--container">
+                <div class="main__recommendations--box1">
+                    <!-- <p>Start: [Related Recommendations]>><<[recommendation_type]>></p> -->
+                </div>
+                <div class="main__recommendations--box2">
+                    <!-- <p><<[recommendation]>><<End>></p> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="main__customersignature">
+            <div class="main__customersignature--container">
+                <div class="main__customersignature--title">
+                    <h5>Customer Signature:</h5>
+                </div>
+                <div class="main__customersignature--box1">
+                    <!-- <p><<[customer_signature]>></p> -->
+                    <p><small>The undersigned, who is the owner's agent of the above property, authorizes this work and releases Northeast Mechanical Services, INC from any incidental damage or responsibility.</small></p>
+                </div>
+                
+            </div>
+            <div class="main__customersignature--container">
+                <div class="main__customersignature--title">
+                    <h5>Customer Representative:</h5>
+                </div>
+                <div class="main__customersignature--box2">
+                    <!-- <p><<[customer_checkout_name]>></p> -->
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="main__imagessection">
+            <div class="main__imagessection--row1">
+                <!-- <div class="main__imagessection--img1"><<[picture_1]>></div> -->
+                <!-- <div class="main__imagessection--img2"><<[picture_2]>></div> -->
+            </div>
+            <div class="main__imagessection--row2">
+                <!-- <div class="main__imagessection--img3"><<[picture_3]>></div> -->
+                <!-- <div class="main__imagessection--img4"><<[picture_4]>></div> -->
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer__title">
+            <p><strong>Thank you for your business!</strong></p>
+        </div>
+        <div class="footer__subtitle">
+            <p>  We also provide COMPLETE HVAC, Electrical, Plumbing, Automated Controls Installation and Repair Services.
+                (856) 262-2305 www.NortheastServices.org
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
